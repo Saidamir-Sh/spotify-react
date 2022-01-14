@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
+import Song from './Song'
 import { Spinner } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
@@ -17,13 +18,15 @@ const Home = () => {
                 setisLoading(false)
             }
         } catch (error) {
-            
+            console.log(error)
         }
     }, [])
 
     return (
         <div className='home'>
-            
+            {
+                isLoading ? <Spinner animation="border" /> : <Song artist={artist} />
+            }
         </div>
     )
 }
