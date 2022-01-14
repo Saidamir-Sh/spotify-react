@@ -8,3 +8,6 @@
 .nav-link i {
     padding-right: .5em;
 }
+.footer-link a {
+    font-size: .9rem !important;
+}
