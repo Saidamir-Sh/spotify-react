@@ -5,6 +5,10 @@
     color: #fff;
     margin-right: 6em;
 }
+.nav-link:hover {
+    text-decoration: none;
+    pointer-events: none;
+}
 .nav-link i {
     padding-right: .5em;
 }
