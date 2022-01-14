@@ -14,8 +14,10 @@ function App() {
     <Container fluid={true} className='px-0'>
       <Router> 
         <Row className='no-gutters'>
-          <Col md={2}>
+          <Col md={2} className='position-fixed ' style={{zIndex: '9999'}}>
             <Navbar />
+          </Col>
+          <Col md={2}>
           </Col>
           <Col md={10}>
             <Routes>
@@ -24,7 +26,7 @@ function App() {
                 <Route path='/artist' element={<Artist />} /> 
             </Routes>
           </Col>
-          <Col md={12}>
+          <Col md={12} className='position-fixed' style={{bottom: '0px'}} >
             <Player />
           </Col>
         </Row>

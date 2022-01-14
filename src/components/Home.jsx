@@ -1,8 +1,11 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import Song from './Song'
+import '../style/Home.css'
 import { Spinner } from 'react-bootstrap'
+import {Container, Row, Col} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import Loader from './Loader'
 
 const Home = () => {
 
@@ -23,13 +26,16 @@ const Home = () => {
     }, [])
 
     return (
-        <div className='home'>
-            {
-                isLoading ? <Spinner animation="border" /> : artists.map((artist) => {
-                    <Song artists={artist} />
-                })
-            }
-        </div>
+        <Container className='home'>
+            <Row className='pt-4'>
+                {
+                    isLoading ? <Loader /> : artists.map((artist) => {
+                       return <Song artists={artist} />
+                    })
+                }
+
+            </Row>
+        </Container>
     )
 }
 
