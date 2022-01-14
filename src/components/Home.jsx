@@ -27,6 +27,14 @@ const Home = () => {
 
     return (
         <Container className='home'>
+            <div className='home-links'>
+                <a>TRENDING</a>
+                <a>PODCAST</a>
+                <a>MOODS AND GENRES</a>
+                <a>NEW RELEASES</a>
+                <a>DISCOVER</a>
+            </div>
+            <h1 className='font-weight-bold text-white pt-5'>#THROWBACKTHURSDAY</h1>
             <Row className='pt-4'>
                 {
                     isLoading ? <Loader /> : artists.map((artist) => {

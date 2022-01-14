@@ -4,3 +4,13 @@
     background: rgb(8,147,191);
     background: linear-gradient(80deg, rgba(8,147,191,1) 30%, rgba(3,61,80,1) 61%, rgba(0,29,42,1) 85%); 
 }
+.home-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    color: rgba(255, 255, 255, 0.815);
+}
+.home-links a {
+    margin: 1em;
+}
