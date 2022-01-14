@@ -7,14 +7,14 @@ import { Link } from 'react-router-dom'
 const Home = () => {
 
     const [isLoading, setisLoading] = useState(true)
-    const [artist, setArtist] = useState(null)
+    const [artists, setArtists] = useState(null)
 
     useEffect( async () => {
         try {
             let response = await fetch('https://striveschool-api.herokuapp.com/api/deezer/search?q=queen')
             if(response.ok) {
                 let data = await response.json()
-                setArtist(data)
+                setArtists(data.data)
                 setisLoading(false)
             }
         } catch (error) {
@@ -25,7 +25,9 @@ const Home = () => {
     return (
         <div className='home'>
             {
-                isLoading ? <Spinner animation="border" /> : <Song artist={artist} />
+                isLoading ? <Spinner animation="border" /> : artists.map((artist) => {
+                    <Song artists={artist} />
+                })
             }
         </div>
     )

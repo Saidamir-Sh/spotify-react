@@ -1,14 +1,14 @@
 import React from 'react'
+import Home from './Home'
 import { Card } from 'react-bootstrap'
 
-const Song = ({ artist }) => {
-    console.log(artist.data[0])
-    console.log(artist.data[0].album.cover)
+const Song = ({ artists }) => {
+    
     return (
-        <Card>
-            <Card.Img variant="top" style={{width: '8rem'}} />
+        <Card key={artists.id}>
+            <Card.Img variant="top" src={artists.album.cover} style={{width: '8rem'}} />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title>{artists.title} hello</Card.Title>
             </Card.Body>
         </Card>
     )
